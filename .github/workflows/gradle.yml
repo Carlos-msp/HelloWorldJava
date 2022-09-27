@@ -19,12 +19,12 @@ jobs:
       - name: Store Test report
         uses: actions/upload-artifact@v2
         with:
-          name: Test report
+          name: Test report (Ubuntu)
           path: build/reports/tests/test
       - name: Store Out Jar
         uses: actions/upload-artifact@v2
         with:
-          name: Jar Artifact
+          name: Jar Artifact (Ubuntu)
           path: build/libs/GitActionsTester-1.0-SNAPSHOT.jar
   macos-build:
     runs-on: macos-12
@@ -41,10 +41,10 @@ jobs:
       - name: Store Test report
         uses: actions/upload-artifact@v2
         with:
-          name: Test report
+          name: Test report (MacOS)
           path: build/reports/tests/test
       - name: Store Out Jar
         uses: actions/upload-artifact@v2
         with:
-          name: Jar Artifact
+          name: Jar Artifact (MacOS)
           path: build/libs/GitActionsTester-1.0-SNAPSHOT.jar
