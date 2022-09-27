@@ -21,3 +21,8 @@ jobs:
         with:
           name: Test report
           path: build/reports/tests/test
+      - name: Store Out Jar
+        uses: actions/upload-artifact@v2
+        with:
+          name: Jar Artifact
+          path: build/libs/GitActionsTester-1.0-SNAPSHOT.jar
