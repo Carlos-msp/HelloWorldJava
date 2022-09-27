@@ -20,7 +20,13 @@ jobs:
       - name: Hash output jar
         run: |
           md5sum build/libs/* > build/libs/artifacts.md5
-      - name: Store Out Jar
+      - name: Jar Artifact
         uses: actions/upload-artifact@v2
         with:
-          path: build/libs/*
+          name: Jar Artifact
+          path: build/libs/**.jar
+      - name: MD5 Checksum Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Jar Artifact
+          path: build/libs/**.md5
