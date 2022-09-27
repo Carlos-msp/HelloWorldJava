@@ -7,7 +7,8 @@ jobs:
   ubuntu-build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo sources
+        uses: actions/checkout@v2
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -16,35 +17,10 @@ jobs:
           cache: gradle
       - name: Build with Gradle
         run: ./gradlew build
-      - name: Store Test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test report (Ubuntu)
-          path: build/reports/tests/test
+      - name: Hash output jar
+        run: |
+          md5sum build/libs/* > build/libs/artifacts.md5
       - name: Store Out Jar
         uses: actions/upload-artifact@v2
         with:
-          name: Jar Artifact (Ubuntu)
-          path: build/libs/HelloWorld.jar
-  macos-build:
-    runs-on: macos-12
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: 11
-          distribution: 'zulu'
-          cache: gradle
-      - name: Build with Gradle
-        run: ./gradlew build
-      - name: Store Test report
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test report (MacOS)
-          path: build/reports/tests/test
-      - name: Store Out Jar
-        uses: actions/upload-artifact@v2
-        with:
-          name: Jar Artifact (MacOS)
-          path: build/libs/HelloWorld.jar
+          path: build/libs/*
