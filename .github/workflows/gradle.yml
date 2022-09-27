@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Jar Artifact (Ubuntu)
-          path: build/libs/GitActionsTester-1.0-SNAPSHOT.jar
+          path: build/libs/HelloWorld.jar
   macos-build:
     runs-on: macos-12
     steps:
@@ -47,4 +47,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Jar Artifact (MacOS)
-          path: build/libs/GitActionsTester-1.0-SNAPSHOT.jar
+          path: build/libs/HelloWorld.jar
