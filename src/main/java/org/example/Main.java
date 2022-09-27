@@ -5,5 +5,7 @@ public class Main {
         System.out.println("Hello world!");
     }
 
-    ups this will fail
+    public boolean returnTrue() {
+        return true;
+    }
 }
