@@ -28,5 +28,5 @@ jobs:
       - name: MD5 Checksum Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Jar Artifact
+          name: Artifact Checksum
           path: build/libs/**.md5
